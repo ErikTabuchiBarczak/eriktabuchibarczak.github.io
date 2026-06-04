@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erik Tabuchi Barczak</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+
+<body>
+    <!-- lightbox -->
+    <div class="lightbox" onclick="this.classList.remove('active')">
+        <img src="" alt="" style="display:none;">
+        <video src="" autoplay muted loop playsinline style="display:none;"></video>
+    </div>
+
+    <!-- MARK: top band -->
+    <header class="topband">
+        <img src="images/erik.jpg" alt="Erik Tabuchi Barczak" class="topband-photo">
+        <div class="topband-text">
+            <h1>Erik <span class="surname">Tabuchi Barczak</span></h1>
+            <p class="tagline">C/C++ | Flutter/Dart | 2D/3D Computer Vision </p>
+            <p class="contact-line">
+                <a onclick="copyText('erik-barczak@outlook.com', this)"
+                    style="cursor:pointer;">erik-barczak@outlook.com</a>
+                |
+                <a onclick="copyText('+4915730476944', this)" style="cursor:pointer;">+49 1573 0476944</a>
+                |
+                <a href="Erik_TabuchiBarczak_CV.pdf" target="_blank">CV (PDF)</a>
+            </p>
+        </div>
+    </header>
+
+    <!-- MARK: tabs -->
+    <nav class="tabs">
+        <button class="tab active" onclick="showTab('projects')">Projects</button>
+        <button class="tab" onclick="showTab('about')">About</button>
+    </nav>
+
+    <!-- MARK: about -->
+    <section id="about" style="display:none;">
+        <p>
+            I am a New Zealand and Polish citizen, raised in New Zealand, and living in Germany since
+            2013. I studied Computational Engineering at TU Darmstadt obtaining a B.Sc. in 2016 and an M.Sc. in 2019. I
+            speak English natively and German at a business fluent level (C1-Zertifikat &amp; DSH-Prüfung).
+            I work across the entire product lifecycle but specialise in computer vision applications.
+            German CV and references available on request.
+        </p>
+    </section>
+
+    <!--  MARK: Projects  -->
+    <section id="projects">
+        <div class="projects-grid">
+
+            <!-- MARK: Frames -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <video autoplay muted loop playsinline>
+                        <source src="images/videoanalysis.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h3>Sports Video Analysis</h3>
+                    <p class="subtitle">N12 Tactics (Solo Developer) | 2023 - present</p>
+                    <p>
+                        AI-powered cross-platform application for video analysis in sports. Computer vision pipeline for
+                        object detction, scene analysis and segmentation and rendering.
+                    </p>
+                    <div class="tech-tags">
+                        <span>Flutter/Dart</span>
+                        <span>C++</span>
+                        <span>Python</span>
+                        <span>OpenCV</span>
+                        <span>Machine Learning</span>
+                        <span>Windows</span>
+                        <span>MacOS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MARK: Patterns -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <video autoplay muted loop playsinline>
+                        <source src="images/tacticsapp.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h3>Sports Tactics App</h3>
+                    <p class="subtitle">N12 Tactics (Solo Developer) | 2023 - present</p>
+                    <p>
+                        Interactive cross-platform application for tactical planning and presentation in sports.
+                        Animations and tactical presentations with high-quality rendering.
+                    </p>
+                    <div class="tech-tags">
+                        <span>Flutter/Dart</span>
+                        <span>iOS</span>
+                        <span>Android</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MARK: Anomaly Detection & 3D Reconstruction -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <video autoplay muted loop playsinline>
+                        <source src="images/IIIT.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h3>Anomaly Detection &amp; 3D Reconstruction</h3>
+                    <p class="subtitle">KIT/IIIT (Researcher) | 2021 - 2023</p>
+                    <p>
+                        Automated inspection and geometric reconstruction of mechanical parts
+                        for remanufacturing. Multi-sensor pipeline with robot arm, 3D camera
+                        and laser scanner.
+                    </p>
+                    <div class="tech-tags">
+                        <span>C++</span>
+                        <span>Python</span>
+                        <span>ROS</span>
+                        <span>PyTorch</span>
+                        <span>PCL</span>
+                        <span>Open3D</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MARK: Medical Imaging -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="images/medcomoverview.png" alt="Medical Image Processing">
+                </div>
+                <div class="project-info">
+                    <h3>Medical Image Processing</h3>
+                    <p class="subtitle">MedCom GmbH (Software Developer) | 2020 - 2021</p>
+                    <p>
+                        Patient positioning for proton therapy using multi-modal
+                        image registration (X-ray, CT, MRI). Hardware interface development
+                        for X-ray generators. GPU-accelerated processing.
+                    </p>
+                    <div class="tech-tags">
+                        <span>C/C++</span>
+                        <span>WinAPI</span>
+                        <span>CUDA</span>
+                        <span>OpenCV</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VR & Robotics -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="images/mastersthesisoverview.png" alt="Master's Thesis">
+                </div>
+                <div class="project-info">
+                    <h3>Virtual Reality Satellite Assembly</h3>
+                    <p class="subtitle">Master Thesis | TU Darmstadt | 2019</p>
+                    <p>
+                        Virtual reality, digital twin and robot arm pipeline for assembling spacecraft
+                        components in orbit. Inferface between TinkerForge, Siemens NX and Unity3D.
+                    </p>
+                    <div class="tech-tags">
+                        <span>C#</span>
+                        <span>Unity3D</span>
+                        <span>Robotics</span>
+                        <span>CAD</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MARK: Footer  -->
+    <footer>
+        <p>Erik Tabuchi Barczak | <a onclick="copyText('erik-barczak@outlook.com', this)"
+                style="cursor:pointer;">erik-barczak@outlook.com</a> | <a onclick="copyText('+4915730476944', this)"
+                style="cursor:pointer;">+49 1573 0476944</a> | Köln </p>
+    </footer>
+
+
+    <script>
+        function copyText(text, el) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            var orig = el.textContent;
+            el.textContent = 'Copied!';
+            setTimeout(function () { el.textContent = orig; }, 1500);
+        }
+
+        document.querySelectorAll('.project-card').forEach(function (card) {
+            card.addEventListener('click', function () {
+                var lb = document.querySelector('.lightbox');
+                var lbImg = lb.querySelector('img');
+                var lbVid = lb.querySelector('video');
+                var vid = card.querySelector('.project-visual video');
+                var img = card.querySelector('.project-visual img');
+                if (vid) {
+                    lbImg.style.display = 'none';
+                    lbVid.style.display = 'block';
+                    lbVid.src = vid.querySelector('source') ? vid.querySelector('source').src : vid.src;
+                } else if (img) {
+                    lbVid.style.display = 'none';
+                    lbVid.src = '';
+                    lbImg.style.display = 'block';
+                    lbImg.src = img.src;
+                }
+                lb.classList.add('active');
+            });
+        });
+
+        function showTab(id) {
+            document.getElementById('projects').style.display = id === 'projects' ? 'block' : 'none';
+            document.getElementById('about').style.display = id === 'about' ? 'block' : 'none';
+            document.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('active'); });
+            event.target.classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>

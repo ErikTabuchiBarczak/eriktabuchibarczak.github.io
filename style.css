@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MARK: fonts */
+@font-face {
+  font-family: "carlito";
+  src: url("Fonts/Carlito-Regular.ttf");
+}
+
+@font-face {
+  font-family: "carlitobold";
+  src: url("Fonts/Carlito-Bold.ttf");
+}
+
+@font-face {
+  font-family: "simplysans";
+  src: url("Fonts/SimplySans-Book.ttf");
+}
+
+:root {
+  --dark: rgba(52, 61, 47, 1);
+  --light: rgba(237, 233, 193, 1);
+  --light-dim: rgba(237, 233, 193, 0.7);
+  --accented: rgb(98, 110, 87);
+  --accent: rgba(120, 140, 100, 1);
+  --card-bg: rgba(62, 72, 56, 1);
+}
+
+body {
+  font-family: "carlito", sans-serif;
+  background-color: var(--dark);
+  color: var(--light);
+  line-height: 1.6;
+}
+
+/* MARK: topband */
+.topband {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.topband-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  flex-shrink: 0;
+}
+
+.topband-text {
+  text-align: left;
+}
+
+.topband h1 {
+  font-family: "carlitobold", sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.surname {
+  color: var(--accented);
+}
+
+.topband .tagline {
+  font-family: "simplysans", sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.topband .contact-line {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: rgba(52, 61, 47, 0.7);
+}
+
+.topband .contact-line a {
+  color: var(--dark);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  transition: border-color 0.3s;
+  cursor: pointer;
+}
+
+.topband .contact-line a:hover {
+  border-color: var(--dark);
+}
+
+/* MARK: Section */
+section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* MARK: Tabs */
+.tabs {
+  max-width: 900px;
+  margin: 2rem auto 0;
+  padding: 0 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.tab {
+  font-family: "carlitobold", sans-serif;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: var(--light-dim);
+  cursor: pointer;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  letter-spacing: 0.05em;
+}
+
+.tab.active {
+  color: var(--light);
+  border-bottom-color: var(--accent);
+}
+
+/* MARK: Project Cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 6px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 280px;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: rgba(72, 82, 66, 1);
+}
+
+.project-card:nth-child(even) .project-visual {
+  order: 2;
+}
+
+.project-visual {
+  background: var(--accented);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-visual img,
+.project-visual video {
+  width: 100%;
+  height: 100%;
+  max-height: 280px;
+  object-fit: contain;
+}
+
+.project-info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-info h3 {
+  font-family: "carlitobold", sans-serif;
+  font-size: 1.15rem;
+  margin-bottom: 0.3rem;
+}
+
+.project-info .subtitle {
+  font-family: "simplysans", sans-serif;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.project-info p {
+  font-size: 0.95rem;
+  color: var(--light-dim);
+  margin-bottom: 1rem;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tech-tags span {
+  font-family: "simplysans", sans-serif;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  color: var(--light-dim);
+  letter-spacing: 0.04em;
+}
+
+/* MARK: Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img,
+.lightbox video {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* MARK: Footer */
+footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  font-size: 0.85rem;
+  color: var(--light-dim);
+}
+
+footer a {
+  color: var(--light);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* MARK: Responsive */
+@media (max-width: 800px) {
+  .topband {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .topband-text {
+    text-align: center;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card:nth-child(even) .project-visual {
+    order: 0;
+  }
+}
